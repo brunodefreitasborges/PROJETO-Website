@@ -1,31 +1,61 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Orelega+One&family=Source+Serif+Pro:wght@300&display=swap');
+
 body {
     background-image: url(media/seamless_bg.png);
     margin: 0%;
 }
 
+h1 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 2em;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+}
 nav {
     position: fixed;
-    border-radius: 0.2em;
-    background-color: #4d4dfa;
+    background-color: rgb(20, 20, 20);
     height: auto;
     width: 100%;
     padding: 0.4em;
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.61);
-    box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+    
     
 }
 
 nav > a {
     height: auto;
     width: auto;
-    background-color: #01017a;
     display: inline-block;
     text-decoration: none;
-    border-right: 1px solid black;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
+    font-family: 'Orelega One', cursive;
+    font-size: 1.2em;
+    margin: 0.2em 2em;
     text-align: center;
     color: white
 }
+
+nav > a:hover {
+    color: rgba(255, 255, 255, 0.418);
+}
+
+#about {
+    position: absolute;
+    z-index: -1;
+    margin: 10% 30% 5% 10%;
+    padding: 1em 2em;
+    background-color: white;
+    border-radius: 1em;
+}
+
+#about h1, p {
+    margin: 0.5em;
+    padding: 0;
+    text-indent: 1em;
+}
+
+
+
