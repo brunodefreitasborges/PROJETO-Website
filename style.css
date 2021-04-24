@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body {
+    background-image: url(media/seamless_bg.png);
+    margin: 0%;
+}
+
+nav {
+    position: fixed;
+    border-radius: 0.2em;
+    background-color: #4d4dfa;
+    height: auto;
+    width: 100%;
+    padding: 0.4em;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.61);
+    box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+    
+}
+
+nav > a {
+    height: auto;
+    width: auto;
+    background-color: #01017a;
+    display: inline-block;
+    text-decoration: none;
+    border-right: 1px solid black;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    text-align: center;
+    color: white
+}
