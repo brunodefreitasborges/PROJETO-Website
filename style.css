@@ -9,15 +9,17 @@ body {
 
 h1 {
     font-family: 'Source Serif Pro', serif;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
-p {
+p , li{
     font-family: 'Montserrat', sans-serif;
     text-align: justify;
+    font-size: 1.5em;
+    list-style: none;
 }
 nav {
-    position: fixed;
+    position: fixed, absolute;
     background-color: rgb(20, 20, 20);
     height: auto;
     width: 100%;
@@ -42,20 +44,31 @@ nav > a:hover {
     color: rgba(255, 255, 255, 0.418);
 }
 
-#about {
-    position: absolute;
+section {
+    position: relative;
     z-index: -1;
-    margin: 10% 30% 5% 10%;
-    padding: 1em 2em;
-    background-color: white;
+    margin: 5% 5% 5% 5%;
+    padding: 1.5em 1.5em;
+    background-color: rgba(255, 255, 255, 0.822);
     border-radius: 1em;
 }
 
-#about h1, p {
-    margin: 0.5em;
+section h1, p, li {
+    margin: 0em;
     padding: 0;
-    text-indent: 1em;
+    text-indent: 2em;
 }
 
+section img {
+    border: 1px solid black;
+    border-radius: 50%;
+    float: right;
+    margin: 2%;
+}
+
+#video {
+    width: 560px;
+    margin: 5% auto;
+}
 
 
