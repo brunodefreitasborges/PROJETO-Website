@@ -7,9 +7,15 @@ body {
     margin: 0%;
 }
 
+
 h1 {
     font-family: 'Source Serif Pro', serif;
     font-size: 2.5em;
+}
+
+h2 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 2.0em;
 }
 
 p , li{
@@ -45,13 +51,14 @@ nav > a:hover {
 }
 
 section {
-    position: relative;
+    
     z-index: -1;
     margin: 5% 5% 5% 5%;
     padding: 1.5em 1.5em;
     background-color: rgba(255, 255, 255, 0.822);
     border-radius: 1em;
 }
+
 
 section h1, p, li {
     margin: 0em;
