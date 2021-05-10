@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Orelega+One&family=Source+Serif+Pro:wght@300&display=swap');
-@media only screen and (max-device-width: 400px) {
+@media only screen and (max-device-width: 480px) {
     body {
         background-image: url(media/seamless_bg.png);
         margin: 0%;
