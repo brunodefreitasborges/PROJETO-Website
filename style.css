@@ -142,7 +142,7 @@ section {
 section h1, p, li {
     margin: 0em;
     padding: 0;
-    text-indent: 2em;
+    text-indent: 1em;
 }
 
 section img {
