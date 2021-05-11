@@ -81,6 +81,7 @@
         margin: 5% auto;
     }
 }
+
 body {
     background-image: url(media/seamless_bg.png);
     margin: 0%;
@@ -89,18 +90,18 @@ body {
 
 h1 {
     font-family: 'Source Serif Pro', serif;
-    font-size: 2.0em;
+    font-size: 2.2em;
 }
 
 h2 {
     font-family: 'Source Serif Pro', serif;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 p , li{
     font-family: 'Montserrat', sans-serif;
     text-align: justify;
-    font-size: 1.0em;
+    font-size: 1.4em;
     list-style: none;
 }
 nav {
@@ -119,7 +120,7 @@ nav > a {
     display: inline-block;
     text-decoration: none;
     font-family: 'Orelega One', cursive;
-    font-size: 1.0em;
+    font-size: 1.2em;
     margin: 0.2em 2em;
     text-align: center;
     color: white
