@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Orelega+One&family=Source+Serif+Pro:wght@300&display=swap');
 
-@media (min-width: 0px) and (max-width: 480px) {
+@media (min-width: 0px) and (max-width: 600px) {
     body {
         background-image: url(media/seamless_bg.png);
         margin: 0%;
