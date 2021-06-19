@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Frete - Pessoa Jurídica</title>
+    <style>
+        body {
+            background-image: url(../media/seamless_bg.png);
+            margin: 0%;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            }
+        #calcular {
+            width: 21em;
+            height: 3em;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #main {
+            background-color: white;
+            margin: auto;
+            padding: 2em;
+            border: 2px solid black;
+            width: fit-content;
+            text-align: center;
+        }
+        #footer {
+            background-color: white;
+            margin: auto;
+            padding: 1em;
+            width: 20.1em;
+            border: 2px solid black;
+            text-align: justify;
+            
+        }
+        h1 {
+            margin: 0em 1em 0em 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Cálculo de Frete</h1>
+        <p><strong>Pessoa Jurídica</strong></p>
+        <label for="cotacao">Cotação:</label>
+        <input type="number" name="cotacao" id="cotacao"><br>
+        <label for="kms">Kilometragem:</label>
+        <input type="number" name="kms" id="kms"><br>
+        <label for="pedagio">Pedágio:</label>
+        <input type="number" name="pedagio" id="pedagio"><br>
+        <label for="abastecimento">Abastecimento:</label>
+        <input type="number" name="abastecimento" id="abastecimento"><br>
+        <label for="entregas">Entregas:</label>
+        <input type="number" name="entregas" id="entregas"><br>
+        <input type="button" value="Calcular" id="calcular" onclick="calcular()">
+        <p id="frete"></p>
+        <p id="adiantamento"></p>
+        <p id="quitacao"></p>
+    </div>
+    <div id="footer">
+        <p><strong>Como funciona o cálculo do frete (Pessoa Jurídica)</strong></p>
+        <p><em>O valor total do frete é calculado multiplicando a cotação (que é o valor atualizado que a empresa paga por KM rodado) pelos kilômetros a serem percorridos.</em></p>
+        <p><em>O adiantamento é calculado da seguinte forma: 75% do valor do frete + o valor de pedágio da rota. Deste adiantamento é descontado o valor do abastecimento - se houver.</em></p>
+        <p><em>A quitação é o saldo restante. Os valores relativos à entregas e passagens em outras bases são somados à quitação.</em></p>
+    </div>
+
+    <script>
+        function calcular() {
+            var cotacao = window.document.getElementById('cotacao')
+            var kms = window.document.getElementById('kms')
+            var pedagio = window.document.getElementById('pedagio')
+            var abastecimento = window.document.getElementById('abastecimento')
+            var entregas = window.document.getElementById('entregas')
+
+            cotacao = Number(cotacao.value)
+            kms = Number(kms.value)
+            pedagio = Number(pedagio.value)
+            abastecimento = Number(abastecimento.value)
+            entregas = Number(entregas.value)
+
+            f = cotacao * kms
+            ad = ((f / 100 * 75) + pedagio) - abastecimento
+            qt = (f / 100 * 25) + entregas
+
+            f = parseFloat(f.toFixed(2))
+            ad = parseFloat(ad.toFixed(2))
+            qt = parseFloat(qt.toFixed(2))
+
+            var frete = window.document.getElementById('frete')
+            frete.innerHTML = `O valor do frete é <strong>R$ ${f}</strong>`
+            var adiantamento = window.document.getElementById('adiantamento')
+            adiantamento.innerHTML = `O valor do adiantamento é <strong>R$ ${ad}</strong>`
+            var quitacao = window.document.getElementById('quitacao')
+            quitacao.innerHTML = `O valor da quitação é <strong>R$ ${qt}</strong>`
+        }
+    </script>
+</body>
+</html>
