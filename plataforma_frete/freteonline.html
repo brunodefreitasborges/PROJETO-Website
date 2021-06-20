@@ -5,13 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Projetos</title>
+    <title>Cálculo de Frete</title>
 </head>
 <body>
+    <section id="about">
+        <h1>Tipos de Frete</h1>
+        <h2>Carreta fechada</h2>
+        <p>Este frete leva em consideração a carreta totalmente carregada (ou com peso superior a 10 toneladas). Consulte a tabela atualizada de valores de frete para escolher o trecho e valor pago por kilômetro.</p><br>
+        <p>Este tipo de frete é calculado utilizando o sistema de adiantamento e quitação.</p>
+        <h2>Frete por peso</h2>
+        <p>Quando o peso da carreta não for superior a 10 toneladas o contrato deve ser redigido com o valor de kilômetro de carreta vazia (conforme tabela) somado com o peso da carga vezes o valor por kilograma (R$0.08).</p><br>
+        <p>Este frete também utiliza o sistema de adiantamento e quitação.</p>
+        <h2>Carreta Vazia</h2>
+        <p>Nos casos em que o contrato for relativo à viagem com a carreta vazia, leva-se em conta o valor pago por kilômetro vazio vezes a distância que será percorrida (conforme tabela).</p><br>
+        <p>Neste tipo de frete todo o valor do contrato é colocado no adiantamento - não havendo quitação.</p>
+    </section>
    <section id="tipo_de_frete">
         <h1>Selecione o tipo de frete a ser calculado:</h1>
-        <h2><a href="fretepj.html" rel="next">Pessoa Jurídica</a></h2>
-        <h2><a href="fretepf.html" rel="next">Pessoa Física</a></h2>
+        <a id="pj" href="fretepj.html" rel="next">Pessoa Jurídica</a>
+        <a id="pf" href="fretepf.html" rel="next">Pessoa Física</a>
    </section>
 </body>
 </html>

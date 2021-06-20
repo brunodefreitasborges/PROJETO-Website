@@ -9,10 +9,11 @@
         body {
             background-image: url(../media/seamless_bg.png);
             margin: 0%;
+            font-size: 130%;
         }
         label {
             display: inline-block;
-            width: 100px;
+            width: 130px;
             text-align: right;
             }
         #calcular {
@@ -42,13 +43,36 @@
         }
         h1 {
             margin: 0em 1em 0em 1em;
+            text-align: center;
+        }
+
+        #main p {
+            text-align: center;
+        }
+        #radio {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 0.5em;
+        }
+        #radio label{
+            margin: 0%;
+            display: contents;
         }
     </style>
 </head>
-<body>
+<body onload="hide()">
     <div id="main">
         <h1>Cálculo de Frete</h1>
         <p><strong>Pessoa Física</strong></p>
+        <div id="radio">
+            <label for="carregado">Carregado</label>
+            <input type="radio" name="tipo_frete" id="carregado" checked onclick="hide()">
+            <label for="vazio">Vazio</label>
+            <input type="radio" name="tipo_frete" id="vazio" onclick="hide()">
+            <label for="peso">Por Peso</label>
+            <input type="radio" name="tipo_frete" id="peso" onclick="show()">
+            
+        </div><br>
         <label for="cotacao">Cotação:</label>
         <input type="number" name="cotacao" id="cotacao"><br>
         <label for="kms">Kilometragem:</label>
@@ -59,6 +83,8 @@
         <input type="number" name="abastecimento" id="abastecimento"><br>
         <label for="entregas">Entregas:</label>
         <input type="number" name="entregas" id="entregas"><br>
+        <label for="peso" id="labelPeso">Peso:</label>
+        <input type="number" name="peso" id="txtpeso"><br>
         <input type="button" value="Calcular" id="calcular" onclick="calcular()">
         <p id="frete"></p>
         <p id="adiantamento"></p>
@@ -70,31 +96,58 @@
         <p><strong>Como funciona o cálculo do frete (Pessoa Física)</strong></p>
         <p><em>O valor total do frete é calculado multiplicando a cotação (que é o valor atualizado que a empresa paga por KM rodado) pelos kilômetros a serem percorridos.</em></p>
         <p><em>O adiantamento é calculado da seguinte forma: 75% do valor do frete + o valor de pedágio da rota. Deste adiantamento é descontado o valor do abastecimento - se houver. Para a pessoa física também são descontados os valores de INSS e Sest/SENAT.</em></p>
-        <p><em>A quitação é o saldo restante. Os valores relativos à entregas e passagens em outras bases são somados à quitação.</em></p>
+        <p><em>A quitação é o saldo restante. Os valores relativos a entregas e passagens em outras bases são somados à quitação.</em></p>
     </div>
 
     <script>
+        function hide() {
+            document.getElementById("txtpeso").style.visibility = "hidden";
+            document.getElementById("labelPeso").style.visibility = "hidden";
+        }
+
+        function show() {
+            document.getElementById("txtpeso").style.visibility = "visible";
+            document.getElementById("labelPeso").style.visibility = "visible";
+        }
+
         function calcular() {
             var cotacao = window.document.getElementById('cotacao')
             var kms = window.document.getElementById('kms')
             var pedagio = window.document.getElementById('pedagio')
             var abastecimento = window.document.getElementById('abastecimento')
             var entregas = window.document.getElementById('entregas')
+            var tipoFrete = window.document.getElementsByName('tipo_frete') 
+            if (tipoFrete[2].checked) {
+                var peso = window.document.getElementById('txtpeso')
+            }
             
             cotacao = Number(cotacao.value)
             kms = Number(kms.value)
             pedagio = Number(pedagio.value)
             abastecimento = Number(abastecimento.value)
             entregas = Number(entregas.value)
-            
+            if (tipoFrete[2].checked) {
+                peso = Number(peso.value)
+            }
             f = cotacao * kms
+            if (tipoFrete[2].checked) {
+                f = f + (peso * 0.08)
+            } 
 
             var aliquota = (f / 100 * 20)
             var inss = (aliquota / 100 * 11)
             var sestsenat = (aliquota / 100 * 2.5)
             
-            ad = ((f / 100 * 75) + pedagio) - abastecimento - inss - sestsenat
-            qt = (f / 100 * 25) + entregas
+            if (tipoFrete[0].checked) {
+                ad = ((f / 100 * 75) + pedagio) - abastecimento - inss - sestsenat
+                qt = (f / 100 * 25) + entregas
+            } else if (tipoFrete[1].checked) {
+                ad = (f + pedagio) - abastecimento - inss - sestsenat
+                qt = 0
+            } else if (tipoFrete[2].checked) {
+                ad = ((f / 100 * 75) + pedagio) - abastecimento - inss - sestsenat
+                qt = (f / 100 * 25) + entregas
+            }
            
             f = parseFloat(f.toFixed(2))
             ad = parseFloat(ad.toFixed(2))

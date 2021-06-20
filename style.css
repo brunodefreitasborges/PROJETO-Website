@@ -52,7 +52,7 @@
     }
     
     section {
-        
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.493);
         z-index: -1;
         margin: 5% 5% 5% 5%;
         padding: 1.5em 1.5em;
@@ -171,6 +171,34 @@ section h1, p, li {
     margin: 5% auto;
 }
 
+#pf {
+    height: auto;
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Orelega One', cursive;
+    font-size: 2em;
+    margin: 1em 2em 1em 2em;
+    padding: 1em;
+    border-radius: 20px;
+    text-align: right;
+    color: black;
+    background-color: rgb(124, 124, 128);
+}
+
+#pj {
+    height: auto;
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Orelega One', cursive;
+    font-size: 2em;
+    margin: 1em 2em 1em 2em;
+    padding: 1em;
+    border-radius: 20px;
+    color: black;
+    background-color: rgb(124, 124, 128);
+}
 
 
 
