@@ -186,6 +186,10 @@ section h1, p, li {
     background-color: rgb(124, 124, 128);
 }
 
+#pf:hover {
+    background-color: rgba(124, 124, 128, 0.76);
+}
+
 #pj {
     height: auto;
     width: auto;
@@ -198,6 +202,10 @@ section h1, p, li {
     border-radius: 20px;
     color: black;
     background-color: rgb(124, 124, 128);
+}
+
+#pj:hover {
+    background-color: rgba(124, 124, 128, 0.76);
 }
 
 
